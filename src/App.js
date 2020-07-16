@@ -1,21 +1,6 @@
 import React, { Component } from 'react';
 import classes from './App.css';
-//import styled from 'styled-components';
 import Person from './Person/Person';
-
-/*const StyledButton = styled.button`
-  background-color: ${props => props.alt ? 'red' : 'green'};
-  color: white;
-  font: inherit;
-  border: 1px solid blue;
-  padding: 8px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${props => props.alt ? 'salmon' : 'lightgreen'};
-    color: black;
-  }
-`;*/
 
 class App extends Component {
   state = {
@@ -29,8 +14,6 @@ class App extends Component {
   }
 
   switchNameHandler = (newName) => {
-    //DON'T DO THIS -> this.state.persons[0].name = 'El chido!'
-    //console.log('Was clicked!');
     this.setState({
       persons: [
         { name: newName, age: 36},
@@ -42,7 +25,6 @@ class App extends Component {
 
   deletePersonHandler = (personIndex) => {
     const persons = [...this.state.persons];
-    //const persons = this.state.persons.slice();
     persons.splice(personIndex, 1);
     this.setState({persons: persons})
   }
@@ -72,19 +54,7 @@ class App extends Component {
   }
 
   render() {
-    /*const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
-    };*/
-
+  
     let persons = null;
     let btnClass = '';
 
